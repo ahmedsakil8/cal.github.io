@@ -48,3 +48,23 @@ q.src = "sakil/key16.mp4";
 
 const r = new Audio();
 r.src = "sakil/key17.mp4";
+
+let string = "";
+
+let button = document.querySelectorAll(".btn");
+Array.from(button).forEach((button)=>{
+    button.addEventListener('click', (e)=>{
+        if(e.target.innerHTML == '='){
+            string = eval(string);
+            document.querySelector('#hola').value = string;
+        }
+       else if(e.target.innerHTML == 'C'){
+            string = "";
+            document.querySelector('#hola').value = string;
+        }
+        else{
+        string = string + e.target.innerHTML;
+        document.querySelector('#hola').value = string;
+        }
+    })
+})
